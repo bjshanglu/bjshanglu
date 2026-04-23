@@ -1,0 +1,131 @@
+/* Unified NVIDIA High-Tech Style - Enterprise Data Edition v5 (Visual & SEO Enhanced) */
+:root {
+    --nvidia-green: #76B900;
+    --nvidia-green-hover: #8ae300;
+    --nvidia-black: #000000;
+    --nvidia-dark: #0a0a0a;
+    --nvidia-grey: #1a1a1a;
+    --nvidia-border: #333333;
+    --text-white: #ffffff;
+    --text-grey: #aaaaaa;
+    --text-dim: #666666;
+    --shadow-glow: 0 0 20px rgba(118, 185, 0, 0.3);
+    --shadow-dark: 0 15px 35px rgba(0,0,0,0.7);
+    --transition-smooth: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", "Arial", sans-serif; }
+body { background-color: var(--nvidia-black); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* --- Particles / Background Effects --- */
+.bg-particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
+    z-index: -2;
+}
+
+/* Subtle Animated Grid */
+.bg-grid {
+    position: fixed; top: 0; left: 0; width: 200%; height: 200%;
+    background-image: linear-gradient(rgba(118, 185, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(118, 185, 0, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(500px) rotateX(60deg) translateY(-20%);
+    z-index: -1;
+    animation: grid-move 20s linear infinite;
+}
+@keyframes grid-move { from { background-position: 0 0; } to { background-position: 0 60px; } }
+
+/* Header */
+header.header-nvidia {
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px); height: 75px;
+    display: flex; align-items: center; position: sticky; top: 0; z-index: 1000;
+    border-bottom: 2px solid var(--nvidia-green);
+    transition: var(--transition-smooth);
+}
+.header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a {
+    text-decoration: none; color: var(--text-white); font-weight: 700; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s;
+    position: relative;
+}
+.nav-links a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--nvidia-green); transition: width 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover { color: var(--nvidia-green); }
+
+/* Language Switcher */
+.lang-switch {
+    display: flex; gap: 10px; border: 1px solid var(--nvidia-border);
+    padding: 4px 10px; border-radius: 20px; font-size: 11px;
+}
+.lang-btn { cursor: pointer; opacity: 0.5; transition: 0.3s; }
+.lang-btn.active { opacity: 1; color: var(--nvidia-green); font-weight: 800; }
+
+.nav-cta { background: var(--nvidia-green); color: black !important; padding: 10px 22px; border-radius: 2px; font-weight: 800 !important; }
+
+/* Hero Section with Parallax Effect */
+.hero-nvidia {
+    padding: 160px 0; text-align: center; border-bottom: 1px solid var(--nvidia-border);
+    position: relative;
+}
+.hero-content { position: relative; z-index: 10; }
+
+.gradient-text-animated {
+    font-size: 64px; font-weight: 900; margin-bottom: 20px;
+    background: linear-gradient(90deg, #fff, var(--nvidia-green), #fff);
+    background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite; text-transform: uppercase;
+}
+@keyframes shine { to { background-position: 200% center; } }
+
+/* --- 3D & Advanced Cards --- */
+.perspective-container { perspective: 1000px; }
+
+.card-nvidia {
+    background: var(--nvidia-grey); padding: 45px; border: 1px solid var(--nvidia-border);
+    transition: var(--transition-smooth); border-radius: 4px;
+    transform-style: preserve-3d;
+}
+.card-nvidia:hover {
+    border-color: var(--nvidia-green);
+    transform: translateZ(20px) rotateX(2deg) rotateY(2deg);
+    box-shadow: var(--shadow-dark), var(--shadow-glow);
+}
+
+/* Stats Section */
+.stats-container-dark { background: rgba(0,0,0,0.5); padding: 100px 0; position: relative; }
+.visual-mesh {
+    width: 100%; height: 400px; border: 1px solid var(--nvidia-border); border-radius: 4px;
+    position: relative; background: rgba(26,26,26,0.3); backdrop-filter: blur(5px);
+}
+.pulse-ring {
+    position: absolute; width: 20px; height: 20px; border: 1px solid var(--nvidia-green);
+    border-radius: 50%; animation: pulse-out 2.5s infinite; opacity: 0;
+}
+@keyframes pulse-out { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(4); opacity: 0; } }
+
+/* Vertical Bar Chart */
+.bar-chart-v { display: flex; align-items: flex-end; justify-content: space-around; height: 180px; padding-top: 20px; border-bottom: 1px solid var(--nvidia-border); }
+.bar-v { width: 35px; background: var(--nvidia-green); position: relative; transition: 1s ease-out; }
+.bar-v:hover { filter: brightness(1.2); box-shadow: var(--shadow-glow); }
+
+/* Buttons & Feedback */
+.btn:active { transform: scale(0.95); }
+
+/* Footer */
+footer { background: #000; padding: 100px 0 40px; border-top: 1px solid var(--nvidia-green); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
+
+@media (max-width: 992px) { .grid-2, .footer-content { grid-template-columns: 1fr; } }
+
+/* Scroll Animations */
+[data-reveal] {
+    opacity: 0; transform: translateY(30px); transition: var(--transition-smooth);
+}
+[data-reveal].revealed { opacity: 1; transform: translateY(0); }
